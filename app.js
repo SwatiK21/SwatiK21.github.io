@@ -13,12 +13,12 @@ var MyTitle = React.createClass({
 	}
 })
 
-
+var myTitleFact = React.createFactory(MyTitle)
 
 var MyFirstComponent = (
 	div(null,
-		React.createElement(MyTitle,{color:'red',title:'props are working'}),
-		React.createElement(MyTitle,{color:'purple',title:'wow, nice color'})
+		myTitleFact({color:'red',title:'props are working'}),
+		myTitleFact({color:'purple',title:'wow, nice color'})
 	)
 )
 
