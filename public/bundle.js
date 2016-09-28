@@ -49,18 +49,34 @@
 	var React = __webpack_require__(1)
 	var ReactDOM = __webpack_require__(34)
 	var div = React.DOM.div
+	var h2 = React.DOM.h2
+	var h3 = React.DOM.h3
+	var nav = React.DOM.nav
+	var p = React.DOM.p
+	var ul = React.DOM.ul
+	var li = React.DOM.li
+	var footer = React.DOM.footer
+
+
 
 	var MyTitle = __webpack_require__(172)
+	var MyFooter = __webpack_require__(173)
 	//import MyTitle from './MyTitle'
 
 	var myTitleFact = React.createFactory(MyTitle)
+	var myFooterFact = React.createFactory(MyFooter)
 
 	var MyFirstComponent = (
 		div(null,
-			myTitleFact({color:'red',title:'props are working'}),
-			myTitleFact({color:'purple',title:'wow, nice color'})
+			div(null,
+				myTitleFact({color:'red',title:'props are working'}),
+				myTitleFact({color:'purple',title:'wow, nice color'})
+			),
+			div(null,
+				myFooterFact({color:'green',gitLink:'https://github.com/SwatiK21/'})
+			)
 		)
-	)
+	)	
 
 
 	ReactDOM.render(MyFirstComponent,document.getElementById('app'));
@@ -21440,6 +21456,13 @@
 	var div = React.DOM.div
 	var h1 = React.DOM.h1
 	var p = React.DOM.p
+	var h2 = React.DOM.h2
+	var h3 = React.DOM.h3
+	var nav = React.DOM.nav
+	var p = React.DOM.p
+	var ul = React.DOM.ul
+	var li = React.DOM.li
+	var footer = React.DOM.footer
 
 
 	var MyTitle = React.createClass({
@@ -21452,7 +21475,32 @@
 		}
 	})
 
+
 	module.exports = MyTitle
+
+/***/ },
+/* 173 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1)
+	var ReactDOM = __webpack_require__(34)
+	var div = React.DOM.div
+	var footer = React.DOM.footer
+	var h3 = React.DOM.h3
+	var a = React.DOM.a
+
+	var MyFooter = React.createClass({
+		render(){
+			return(
+				div(null,
+					//h3({style:{color:this.props.color}},this.props.text))
+					a({style:{color:this.props.color}},this.props.gitLink)
+				)
+			)
+		}
+	})
+	    
+	module.exports = MyFooter
 
 /***/ }
 /******/ ]);
